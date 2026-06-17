@@ -68,7 +68,9 @@ The goal is to build a realistic enterprise environment that can continue evolvi
 ## Repository Structure
 ```
 README.md
+Documentation.md
 Topology.png
+Sources/
 ```
 
 
