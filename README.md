@@ -44,7 +44,7 @@ The goal is to build a realistic enterprise environment that can continue evolvi
 
 
 ## Current Progress
-#### Completed
+### Completed
 * Enterprise topology design
 * VLAN implementation
 * Trunk configuration
@@ -56,7 +56,7 @@ The goal is to build a realistic enterprise environment that can continue evolvi
 * NAT and Internet connectivity
 * Service hardening
 
-#### In Progress
+### In Progress
 * Firewall policy implementation
 * QoS configuration
 * Syslog server integration
