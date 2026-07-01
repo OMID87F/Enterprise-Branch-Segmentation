@@ -1,6 +1,6 @@
 # Enterprise Branch Segmentation
 >**Status**: 🚧 Work in Progress!
-
+- [ ] sss
 ## Overview
 This project focuses on designing and implementing a small enterprise network with an emphasis on network segmentation, security, and operational best practices.
 
@@ -92,7 +92,7 @@ Once completed, the project will verify:
 
 
 ## Documentation
-Detailed configuration steps, screenshots, verification, and troubleshooting notes are available in`Documentation.md`.
+Detailed configuration steps, screenshots, verification, and troubleshooting notes are available in `Documentation.md`.
 > Note: The detailed documentation is currently written in Persian (Farsi).
 
 
