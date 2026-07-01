@@ -8,35 +8,35 @@
 
 
 ## 🔹اهداف
-* VLAN Segmentation
-* Inter-VLAN Routing
-* DHCP
-* Firewall Policy
-* Service Hardening
-* Basic QoS (Simple Queue)
-* Syslog
-* Troubleshooting
+- VLAN Segmentation
+- Inter-VLAN Routing
+- DHCP
+- Firewall Policy
+- Service Hardening
+- Basic QoS (Simple Queue)
+- Syslog
+- Troubleshooting
 
 ## 🔸ترتیب اقدامات
 
 1. **Addressing Plan**✅
 	
 2. **SW-Cisco**
-    * VLANs✅
-    * Trunk✅
-    * Native VLAN✅
-    * SSH Configuration✅
-    * Port Security⚠️
+    - VLANs✅
+    - Trunk✅
+    - Native VLAN✅
+    - SSH Configuration✅
+    - Port Security⚠️
 	
 3. **R-MikroTik**
-    * VLAN Interfaces✅
-    * IP Addressing✅
-	* DHCP✅
-	* Inter-VLAN Routing✅
-	* NAT & Internet✅
-	* Firewall✅
-	* Service Hardening✅
-	* Simple Queue✅
+    - VLAN Interfaces✅
+    - IP Addressing✅
+	- DHCP✅
+	- Inter-VLAN Routing✅
+	- NAT & Internet✅
+	- Firewall✅
+	- Service Hardening✅
+	- Simple Queue✅
 	
 4. **Server-Syslog**✅
 	
@@ -159,38 +159,38 @@ SW-Cisco(config)#end
 >این فاز شامل کانفیگ‌های مربوط به **روتر** سناریو میشه‼️
 
 
-1. تعریف VLANها⬇️
-![[R-MikroTik - VLANs.png]]
+2. تعریف VLANها⬇️
+![R-MikroTik - VLANs](Sources/R-MikroTik%20-%20VLANs.png)
 
 
-2. تنظیم IP Address⬇️
-![[R-MikroTik - IP Addresses.png]]
+3. تنظیم IP Address⬇️
+![R-MikroTik - IP Addresses](Sources/R-MikroTik%20-%20IP%20Addresses.png)
 
 
 3. راه‌اندازی DHCP + دادن Reserved IP به Server-Syslog⬇️
-![[R-MikroTik - DHCP.png]]
+![R-MikroTik - DHCP](Sources/R-MikroTik%20-%20DHCP.png)
 
 
 4. تنظیم NAT و Default Route⬇️
-![[R-MikroTik - NAT+Route.png]]
+![R-MikroTik - NAT+Route](Sources/R-MikroTik%20-%20NAT%2BRoute.png)
 
 
 5. نوشتن Ruleهای Firewall⬇️
-![[R-MikroTik - Firewall.png]]
+![R-MikroTik - Firewall](Sources/R-MikroTik%20-%20Firewall.png)
 >**نکته**:
 >حین نوشتن این Ruleها خیلی از ChatGPT راجب **اصول** Rule نویسی سوال کردم و چیزای خوبی فهمیدم‼️
 
 
 6. بستن IP Serviceها⬇️
-![[R-MikroTik - IP Services.png]]
+![R-MikroTik - IP Services](Sources/R-MikroTik%20-%20IP%20Services.png)
 
 
 7. تعریف Simple Queue⬇️
-![[R-MikroTik - Simple Queue.png]]
+![R-MikroTik - Simple Queue](Sources/R-MikroTik%20-%20Simple%20Queue.png)
 
 
 8. تعریف`Rule`و`Action`برای ارسال Logها به`10.0.10.10`⬇️
-![[R-MikroTik - Logging.png]]
+![R-MikroTik - Logging](Sources/R-MikroTik%20-%20Logging.png)
 
 
 
@@ -202,7 +202,7 @@ SW-Cisco(config)#end
 ```sh
 $ sudo vi /etc/netplan/01-network-manager-all.yaml
 ```
-![[Server-Syslog - netplan.png]]
+![Server-Syslog - netplan](Sources/Server-Syslog%20-%20netplan.png)
 >**نکته**:
 >من خط`dhcp4: no`رو ننوشتم؛ در اینجا فرقی هم نمیکنه، چون IP که DHCP قراره بده `10.0.10.10`عه‼️
 
@@ -222,7 +222,7 @@ input(type="imudp" port="514")
 ```sh
 $ sudo vi /etc/rsyslog.d/10-network-devices.conf
 ```
-![[Server-Syslog - rsyslog.d.png]]
+![Server-Syslog - rsyslog.d](Sources/Server-Syslog%20-%20rsyslog.d.png)
 >**نکته**:
 >سر نوشتن این دو Rule هم از **ChatGPT** کمک گرفتم و با بررسی، فهمیدیم که سیسکو Logها رو با **IP** و میکروتیک با **Hostname** ارسال میکنه‼️
 
@@ -235,7 +235,7 @@ $ sudo systemctl status rsyslog
 
 
 5. بررسی باز بودن`UDP Port 514`⬇️
-![[Server-Syslog - ss.png]]
+![Server-Syslog - ss](Sources/Server-Syslog%20-%20ss.png)
 
 
 
@@ -245,36 +245,33 @@ $ sudo systemctl status rsyslog
 >این فاز برای بررسی نهایی و **پایان** کل سناریو عه‼️
 
 
-* صحت اختصاص VLANها و کانفیگ Trunk⬇️✅
-![[Validation - VLAN & Trunk.png]]
+- صحت اختصاص VLANها و کانفیگ Trunk⬇️✅
+![Validation - VLAN & Trunk](Sources/Validation%20-%20VLAN%20%26%20Trunk.png)
 
 
-* صحت عملکرد Inter-VLAN Routing⬇️✅
-![[Validation - Inter-VLAN Routing.png]]
+- صحت عملکرد Inter-VLAN Routing⬇️✅
+![Validation - Inter-VLAN Routing](Sources/Validation%20-%20Inter-VLAN%20Routing.png)
 >**نکته**:
 >اینجا مجبور بودم Ruleهای Firewall رو **غیرفعال** کنم؛ چون عملا یکی از سیاست‌های **اصلی**مون دسترسی نداشتن به`ADMIN`بود‼️
 
 
-* صحت کانفیگ SSH و دسترسی به سوئیچ⬇️✅
-![[Validation - SSH.png]]
+- صحت کانفیگ SSH و دسترسی به سوئیچ⬇️✅
+![Validation - SSH](Sources/Validation%20-%20SSH.png)
 >**نکته**:
 >نوشتن یه همچین دستور طولانی/دقیق صرفا بخاطر **قدیمی** بودن`IOS`روی سوئیچ بود‼️
 
 
-* صحت اتصال به اینترنت و کارکرد NAT⬇️✅
-![[Validation - Internet & NAT.png]]
+- صحت اتصال به اینترنت و کارکرد NAT⬇️✅
+![Validation - Internet & NAT](Sources/Validation%20-%20Internet%20%26%20NAT.png)
 
 
-* صحت عملکرد سیاست‌های Firewall طبق انتظار⬇️✅
-![[Validation - Firewall.png]]
+- صحت عملکرد سیاست‌های Firewall طبق انتظار⬇️✅
+![Validation - Firewall](Sources/Validation%20-%20Firewall.png)
 >ناتوانی دسترسی`GUEST`به`Internal` | ناتوانی دسترسی`STAFF`به غیر از خودش | ناتوانی‌شون در`ssh`.
 
 
-* صحت عملکرد Syslog Server؛ دریافت Logها از Cisco و MikroTik⬇️✅
-![[Validation - Rsyslog.png]]
-
-
-
+- صحت عملکرد Syslog Server؛ دریافت Logها از Cisco و MikroTik⬇️✅
+![Validation - Rsyslog](Sources/Validation%20-%20Rsyslog.png)
 
 ## 🔹مشکل
 - **مشکل**م در بخش Port Security بود؛ به دلیل **باگ** داخل نسخه Image، سوئیچ`Administrative Mode`پورت‌ها رو **بعد از** دستور`switchport mode access` از`dynamic desirable`به`static access`تغییر نمیداد؛ پس دستور`switchport port-security`با **Reject** مواجه میشد🛑
@@ -287,4 +284,4 @@ $ sudo systemctl status rsyslog
 ## 🔹نتیجه
 > سناریو درکل موفقیت‌آمیز بود✅️
     
-* همراه با کلی تجربه جدید!
+- همراه با کلی تجربه جدید!
