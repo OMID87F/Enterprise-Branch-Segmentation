@@ -160,6 +160,7 @@ SW-Cisco(config)#end
 
 
 1. تعریف VLANها⬇️
+
 ![R-MikroTik - VLANs](Sources/R-MikroTik%20-%20VLANs.png)
 
 
