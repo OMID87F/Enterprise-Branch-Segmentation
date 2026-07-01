@@ -1,5 +1,4 @@
 # 🔻پیاده‌سازی شبکه سازمانی کوچک - تمرکز بر امنیت
-
 ## 🔹محیط کار و توپولوژی
 
 ![Topology](Topology.png)
@@ -9,7 +8,6 @@
 
 
 ## 🔹اهداف
-
 * VLAN Segmentation
 * Inter-VLAN Routing
 * DHCP
@@ -36,8 +34,8 @@
 	* DHCP✅
 	* Inter-VLAN Routing✅
 	* NAT & Internet✅
-	- Firewall✅
-	- Service Hardening✅
+	* Firewall✅
+	* Service Hardening✅
 	* Simple Queue✅
 	
 4. **Server-Syslog**✅
@@ -143,8 +141,7 @@ SW-Cisco(config)#ip ssh auth 3
 
 
 6. پیاده‌سازی Port Security⬇️
-	
-	⚠️توضیحات در بخش "مشکل"⚠️
+> توضیحات در بخش "مشکل"⚠️
 
 
 7. تنظیم ارسال Logها به Server-Syslog⬇️
