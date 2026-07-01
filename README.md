@@ -9,7 +9,7 @@ Unlike my previous enterprise lab, this project is being developed incrementally
 The goal is to build a realistic enterprise environment that can continue evolving as new networking concepts are learned.
 
 
-## Project Goals
+## Objectives
 * Implement VLAN-based network segmentation.
 
 * Configure Inter-VLAN Routing.
@@ -73,7 +73,7 @@ Sources/
 ```
 
 
-## Planned Validation
+## Validation
 Once completed, the project will verify:
 
 * VLAN segmentation
@@ -84,6 +84,21 @@ Once completed, the project will verify:
 * Service restrictions
 * Syslog logging
 * QoS behavior
+
+
+## Troubleshooting
+
+
+
+
+## Documentation
+Detailed configuration steps, screenshots, verification, and troubleshooting notes are available in Documentation.md.
+> Note: The detailed documentation is currently written in Persian (Farsi).
+
+
+## Learning Outcomes
+Through this project I gained hands-on experience with:
+
 
 
 ## Project Status
