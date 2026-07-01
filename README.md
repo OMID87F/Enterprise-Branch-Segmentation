@@ -1,7 +1,5 @@
 # Enterprise Branch Segmentation
 >**Status**: 🚧 Work in Progress!
-* [] ssfse
-
 
 ## Overview
 This project focuses on designing and implementing a small enterprise network with an emphasis on network segmentation, security, and operational best practices.
