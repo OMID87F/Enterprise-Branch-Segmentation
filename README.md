@@ -25,7 +25,7 @@ The goal is to build a realistic enterprise environment that can continue evolvi
 
 * Integrate centralized Syslog logging.
 
-* Practice structured troubleshooting.
+* Practice troubleshooting through the implement.
 
 
 ## Technologies Used
@@ -55,13 +55,13 @@ The goal is to build a realistic enterprise environment that can continue evolvi
 * DHCP configuration
 * NAT and Internet connectivity
 * Service hardening
-
-### In Progress
 * Firewall policy implementation
 * QoS configuration
 * Syslog server integration
+
+
+### In Progress
 * Validation testing
-* Troubleshooting scenarios
 * Documentation
 
 
