@@ -1,56 +1,54 @@
 # 🔻پیاده‌سازی شبکه سازمانی کوچک - تمرکز بر امنیت
-***
+
 ## 🔹محیط کار و توپولوژی
-***
+
 ![Topology](Topology.png)
 **GNS3**⬆️
-***
+
 
 
 
 ## 🔹اهداف
-***
-- VLAN Segmentation
-- Inter-VLAN Routing
-- DHCP
-- Firewall Policy
-- Service Hardening
-- Basic QoS (Simple Queue)
-- Syslog
-- Troubleshooting
-***
+
+* VLAN Segmentation
+* Inter-VLAN Routing
+* DHCP
+* Firewall Policy
+* Service Hardening
+* Basic QoS (Simple Queue)
+* Syslog
+* Troubleshooting
+
 ## 🔸ترتیب اقدامات
-***
+
 1. **Addressing Plan**✅
 	
 2. **SW-Cisco**
-    - VLANs✅
-    - Trunk✅
-    - Native VLAN✅
-    - SSH Configuration✅
-    - Port Security⚠️
+    * VLANs✅
+    * Trunk✅
+    * Native VLAN✅
+    * SSH Configuration✅
+    * Port Security⚠️
 	
 3. **R-MikroTik**
-    - VLAN Interfaces✅
-    - IP Addressing✅
-	- DHCP✅
-	- Inter-VLAN Routing✅
-	- NAT & Internet✅
+    * VLAN Interfaces✅
+    * IP Addressing✅
+	* DHCP✅
+	* Inter-VLAN Routing✅
+	* NAT & Internet✅
 	- Firewall✅
 	- Service Hardening✅
-	- Simple Queue✅
+	* Simple Queue✅
 	
 4. **Server-Syslog**✅
 	
 5. **Validation**✅
-***
+
 
 
 
 ## 🔹اقدامات و کانفیگ‌ها
-***
 ### 🔸فاز 1 (SW-Cisco)
-***
 >این فاز شامل کانفیگ‌های مربوط به **سوئیچ** سناریو میشه‼️
 
 
@@ -158,10 +156,9 @@ SW-Cisco(config)# logging trap info
 SW-Cisco(config)# loggin source vl 99
 SW-Cisco(config)#end
 ```
-***
+
 
 ### 🔸فاز 2 (R-MikroTik)
-***
 >این فاز شامل کانفیگ‌های مربوط به **روتر** سناریو میشه‼️
 
 
@@ -197,11 +194,10 @@ SW-Cisco(config)#end
 
 8. تعریف`Rule`و`Action`برای ارسال Logها به`10.0.10.10`⬇️
 ![[R-MikroTik - Logging.png]]
-***
+
 
 
 ### 🔸فاز 3 (Server-Syslog)
-***
 >این فاز شامل کانفیگ‌های مربوط به **سرور لینوکس** سناریو میشه‼️
 
 
@@ -243,14 +239,12 @@ $ sudo systemctl status rsyslog
 
 5. بررسی باز بودن`UDP Port 514`⬇️
 ![[Server-Syslog - ss.png]]
-***
+
 
 
 
 ## 🔹راستی آزمایی
-***
 ### 🔸فاز 4 (Validation)
-***
 >این فاز برای بررسی نهایی و **پایان** کل سناریو عه‼️
 
 
@@ -281,20 +275,19 @@ $ sudo systemctl status rsyslog
 
 * صحت عملکرد Syslog Server؛ دریافت Logها از Cisco و MikroTik⬇️✅
 ![[Validation - Rsyslog.png]]
-***
+
 
 
 
 ## 🔹مشکل
-***
 - **مشکل**م در بخش Port Security بود؛ به دلیل **باگ** داخل نسخه Image، سوئیچ`Administrative Mode`پورت‌ها رو **بعد از** دستور`switchport mode access` از`dynamic desirable`به`static access`تغییر نمیداد؛ پس دستور`switchport port-security`با **Reject** مواجه میشد🛑
     
 - **راه‌حل**‌ش کلی صحبت با **ChatGPT** و آزمایش داخل`IOS`بود؛ اما نهایتا پی بردیم که عملا راه‌حل **نداره** و باید به عنوان باگ نسخه "*(vIOS-L2 (15.0(TTC_20140605*" قبولش کنیم‼️
-***
+
 
 
 
 ## 🔹نتیجه
-***
->
-***
+> سناریو درکل موفقیت‌آمیز بود✅️
+    
+* همراه با کلی تجربه جدید!
