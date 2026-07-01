@@ -159,11 +159,11 @@ SW-Cisco(config)#end
 >این فاز شامل کانفیگ‌های مربوط به **روتر** سناریو میشه‼️
 
 
-2. تعریف VLANها⬇️
+1. تعریف VLANها⬇️
 ![R-MikroTik - VLANs](Sources/R-MikroTik%20-%20VLANs.png)
 
 
-3. تنظیم IP Address⬇️
+2. تنظیم IP Address⬇️
 ![R-MikroTik - IP Addresses](Sources/R-MikroTik%20-%20IP%20Addresses.png)
 
 
@@ -203,8 +203,8 @@ SW-Cisco(config)#end
 $ sudo vi /etc/netplan/01-network-manager-all.yaml
 ```
 ![Server-Syslog - netplan](Sources/Server-Syslog%20-%20netplan.png)
->**نکته**:
->من خط`dhcp4: no`رو ننوشتم؛ در اینجا فرقی هم نمیکنه، چون IP که DHCP قراره بده `10.0.10.10`عه‼️
+>**نکته**: 
+> من خط`dhcp4: no`رو ننوشتم؛ در اینجا فرقی هم نمیکنه، چون IP که DHCP قراره بده `10.0.10.10`عه‼️
 
 
 2. باز کردن`UDP Port 514`با اضافه کردن این 2 خط به آخر`rsyslog.conf`⬇️
@@ -273,6 +273,7 @@ $ sudo systemctl status rsyslog
 - صحت عملکرد Syslog Server؛ دریافت Logها از Cisco و MikroTik⬇️✅
 ![Validation - Rsyslog](Sources/Validation%20-%20Rsyslog.png)
 
+
 ## 🔹مشکل
 - **مشکل**م در بخش Port Security بود؛ به دلیل **باگ** داخل نسخه Image، سوئیچ`Administrative Mode`پورت‌ها رو **بعد از** دستور`switchport mode access` از`dynamic desirable`به`static access`تغییر نمیداد؛ پس دستور`switchport port-security`با **Reject** مواجه میشد🛑
     
@@ -280,8 +281,6 @@ $ sudo systemctl status rsyslog
 
 
 
-
 ## 🔹نتیجه
 > سناریو درکل موفقیت‌آمیز بود✅️
-    
 - همراه با کلی تجربه جدید!
